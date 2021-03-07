@@ -1,12 +1,20 @@
-from tkinter import*
+
+
+# https://www.youtube.com/watch?v=RJB1Ek2Ko_Y&ab_channel=thenewboston
+
+
+# LESSON 1
 
 """
+from tkinter import *
+
 root = Tk()
 theLabel = Label(root, text="This is too easy\n" * 10)
 theLabel.pack()
 root.mainloop()
 """
 
+from tkinter import *
 
 root = Tk()
 topFrame = Frame(root)
@@ -29,3 +37,4 @@ button4.pack(side=BOTTOM)
 
 root.mainloop()
 
+# LESSON 2
