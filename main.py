@@ -43,4 +43,37 @@ root.mainloop()
 
 
 
-# LESSON 3
+# LESSON 3 - Fitting Widgets in your Layout
+"""
+from tkinter import *
+root = Tk()
+
+one = Label(root, text='One', bg='red', fg='white')
+one.pack()
+
+two = Label(root, text='two', bg='green', fg='black')
+two.pack(fill=X)
+
+three = Label(root, text='three', bg='red', fg='white')
+three.pack(side=LEFT, fill=Y)
+
+root.mainloop()
+"""
+
+
+
+# LESSON 4 - Grid Layout
+
+from tkinter import *
+root = Tk()
+
+
+
+root.mainloop()
+
+
+
+
+
+
+
