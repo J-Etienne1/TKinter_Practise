@@ -26,8 +26,6 @@ button2.pack(side=LEFT)
 button3.pack(side=LEFT)
 button4.pack(side=BOTTOM)
 
-# jcvhcjcjgc
 
 root.mainloop()
 
-# snflknsdfljknsdf
