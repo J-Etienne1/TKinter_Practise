@@ -3,17 +3,20 @@
 # https://www.youtube.com/watch?v=RJB1Ek2Ko_Y&ab_channel=thenewboston
 
 
-# LESSON 1
+# LESSON 1 - INTRODUCTION
 
 """
 from tkinter import *
 
 root = Tk()
-theLabel = Label(root, text="This is too easy\n" * 10)
+theLabel = Label(root, text="Simple Message \n" * 10)
 theLabel.pack()
 root.mainloop()
 """
 
+
+# LESSON 2 - Organizing your Layout
+"""
 from tkinter import *
 
 root = Tk()
@@ -36,5 +39,8 @@ button4.pack(side=BOTTOM)
 
 
 root.mainloop()
+"""
 
-# LESSON 2
+
+
+# LESSON 3
