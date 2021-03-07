@@ -62,7 +62,33 @@ root.mainloop()
 
 
 
-# LESSON 4 - Grid Layout
+# LESSON 4 + 5 - Grid Layout + More on the Grid Layout
+"""
+from tkinter import *
+root = Tk()
+
+label_1 = Label(root, text='Name')
+label_2 = Label(root, text='Password')
+
+entry_1 = Entry(root)
+entry_2 = Entry(root)
+
+
+label_1.grid(row=0, sticky=E) # E = East i.e right aligned
+label_2.grid(row=1, sticky=E)
+
+entry_1.grid(row=0, column=1)
+entry_2.grid(row=1, column=1)
+
+c = Checkbutton(root, text='Keep me logged in')
+c.grid(columnspan=2)
+
+
+root.mainloop()
+"""
+
+
+# LESSON 6 - Binding Functions to Layouts
 
 from tkinter import *
 root = Tk()
@@ -70,6 +96,15 @@ root = Tk()
 
 
 root.mainloop()
+
+
+
+
+
+
+
+
+
 
 
 
