@@ -261,6 +261,98 @@ root.mainloop()
 
 
 
+####################### LESSON 11 - Adding the Status Bar
+"""
+from tkinter import *
+
+def doNothing():
+    print('I dont work yet....')
+
+root = Tk()
+
+# ********* Main Menu *********
+
+menu = Menu(root)
+root.config(menu=menu)
+
+subMenu = Menu(menu)
+menu.add_cascade(label='File', menu=subMenu)
+subMenu.add_command(label='New Project....', command=doNothing)
+subMenu.add_command(label='New', command=doNothing)
+subMenu.add_command(label='New Scratch File', command=doNothing)
+subMenu.add_command(label='Open.....', command=doNothing)
+subMenu.add_separator()
+subMenu.add_command(label='Settings', command=doNothing)
+subMenu.add_command(label='File Properties', command=doNothing)
+subMenu.add_separator()
+subMenu.add_command(label='Exit', command=doNothing)
+
+
+editMenu = Menu(menu)
+menu.add_cascade(label='Edit', menu=editMenu)
+editMenu.add_command(label='Undo', command=doNothing)
+editMenu.add_command(label='Redo', command=doNothing)
+editMenu.add_separator()
+editMenu.add_command(label='Cut', command=doNothing)
+editMenu.add_command(label='Copy', command=doNothing)
+
+# ********* The Toolbar *********
+
+toolbar = Frame(root, bg='magenta')
+
+insertStuff = Button(toolbar, text='Insert Image', command=doNothing)
+insertStuff.pack(side=LEFT, padx= 2, pady=2)
+printStuff = Button(toolbar, text='Print', command=doNothing)
+insertStuff.pack(side=LEFT, padx= 2, pady=2)
+
+toolbar.pack(side=TOP,fill=X) #x/y need to be in CAPS
+
+
+# ********* Status Bar *********
+
+
+status = Label(root, text='Preparing to do nothing....', bd=1, relief=SUNKEN, anchor=W)
+status.pack(side=BOTTOM, fill=X)
+
+root.mainloop()
+"""
+
+
+
+####################### LESSON 12 - Messagebox
+"""
+from tkinter import *
+import tkinter.messagebox
+
+root = Tk()
+
+tkinter.messagebox.showinfo('Window Tile', 'Would you like to Exit?')
+
+answer = tkinter.messagebox.askquestion('Question 1', 'Do you like silly faces?')
+
+if answer == 'yes':
+    print(' 8==D~ ')
+
+root.mainloop()
+"""
+
+
+
+####################### LESSON 13 - Shapes and Graphics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
