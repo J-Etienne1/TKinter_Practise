@@ -366,7 +366,7 @@ root.mainloop()
 
 
 ####################### LESSON 14 - Images and Icons
-
+"""
 from tkinter import *
 
 root = Tk()
@@ -377,7 +377,7 @@ label.pack()
 
 
 root.mainloop()
-
+"""
 
 
 
