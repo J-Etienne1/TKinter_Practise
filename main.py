@@ -339,7 +339,7 @@ root.mainloop()
 
 
 ####################### LESSON 13 - Shapes and Graphics
-
+"""
 from tkinter import *
 
 root = Tk()
@@ -355,7 +355,39 @@ greenBox = canvas.create_rectangle(25, 25, 130, 60, fill='green') #topleft, widt
 # Delete graphics
 canvas.delete(redLine)
 
+# delete all graphics
+canvas.delete(ALL)
+
 root.mainloop()
+"""
+
+
+
+
+
+####################### LESSON 14 - Images and Icons
+
+from tkinter import *
+
+root = Tk()
+
+photo = PhotoImage(file='aws.gif')
+label = Label(root, image=photo)
+label.pack()
+
+
+root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
 
 
 
