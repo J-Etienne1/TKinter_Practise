@@ -1,9 +1,7 @@
-
-
 # https://www.youtube.com/watch?v=RJB1Ek2Ko_Y&ab_channel=thenewboston
 
 
-# LESSON 1 - INTRODUCTION
+####################### LESSON 1 - INTRODUCTION
 
 """
 from tkinter import *
@@ -14,8 +12,7 @@ theLabel.pack()
 root.mainloop()
 """
 
-
-# LESSON 2 - Organizing your Layout
+####################### LESSON 2 - Organizing your Layout
 """
 from tkinter import *
 
@@ -41,9 +38,7 @@ button4.pack(side=BOTTOM)
 root.mainloop()
 """
 
-
-
-# LESSON 3 - Fitting Widgets in your Layout
+####################### LESSON 3 - Fitting Widgets in your Layout
 """
 from tkinter import *
 root = Tk()
@@ -60,9 +55,7 @@ three.pack(side=LEFT, fill=Y)
 root.mainloop()
 """
 
-
-
-# LESSON 4 + 5 - Grid Layout + More on the Grid Layout
+####################### LESSON 4 + 5 - Grid Layout + More on the Grid Layout
 """
 from tkinter import *
 root = Tk()
@@ -87,16 +80,183 @@ c.grid(columnspan=2)
 root.mainloop()
 """
 
+####################### LESSON 6 - Binding Functions to Layouts / Events
 
-# LESSON 6 - Binding Functions to Layouts
-
+"""
 from tkinter import *
 root = Tk()
 
+def printName():
+    print('Hello my name is Jason')
+
+
+button_1 = Button(root, text='Print my name', command = printName)
+button_1.pack()
+
+root.mainloop()
+"""
+
+# another way to bind functions to widgets maybe a better approach using EVENTS
+
+"""
+from tkinter import *
+root = Tk()
+
+def printName(event):
+    print('Hello my name is Jason')
+
+
+button_1 = Button(root, text='Print my name')
+button_1.bind('<Button-1>', printName)
+button_1.pack()
+
+root.mainloop()
+"""
+
+####################### LESSON 7 - Mouse Click Events
+"""
+from tkinter import *
+root = Tk()
+
+def leftClick(event):
+    print('Left')
+
+def MiddleClick(event):
+    print('Middle')
+
+def RightClick(event):
+    print('Right')
+
+
+frame = Frame(root, width=300, height=250)
+frame.bind('<Button-1>', leftClick)
+frame.bind('<Button-2>', MiddleClick)
+frame.bind('<Button-3>', RightClick)
+
+
+frame.pack()
+
+root.mainloop()
+"""
+
+####################### LESSON 8 - Mouse Click Events
+"""
+from tkinter import *
+
+
+class Buttons:
+    def __init__(self, master):
+        frame = Frame(master)
+        frame.pack()
+
+        self.printButton = Button(frame, text='Print Message', command=self.printMessage)
+        self.printButton.pack(side=LEFT)
+
+        self.quitButton = Button(frame, text='Quit', command=frame.quit)
+        self.quitButton.pack(side=LEFT)
+
+    def printMessage(self):
+        print('Wow, this actually worked')
+
+
+root = Tk()
+b = Buttons(root)
+
+root.mainloop()
+"""
+
+
+
+
+
+####################### LESSON 9 - Creating Drop Down Menus
+"""
+from tkinter import *
+
+def doNothing():
+    print('I dont work yet....')
+
+root = Tk()
+
+menu = Menu(root)
+root.config(menu=menu)
+
+subMenu = Menu(menu)
+menu.add_cascade(label='File', menu=subMenu)
+subMenu.add_command(label='New Project....', command=doNothing)
+subMenu.add_command(label='New', command=doNothing)
+subMenu.add_command(label='New Scratch File', command=doNothing)
+subMenu.add_command(label='Open.....', command=doNothing)
+subMenu.add_separator()
+subMenu.add_command(label='Settings', command=doNothing)
+subMenu.add_command(label='File Properties', command=doNothing)
+subMenu.add_separator()
+subMenu.add_command(label='Exit', command=doNothing)
+
+
+editMenu = Menu(menu)
+menu.add_cascade(label='Edit', menu=editMenu)
+editMenu.add_command(label='Undo', command=doNothing)
+editMenu.add_command(label='Redo', command=doNothing)
+editMenu.add_separator()
+editMenu.add_command(label='Cut', command=doNothing)
+editMenu.add_command(label='Copy', command=doNothing)
 
 
 root.mainloop()
+"""
 
+
+
+####################### LESSON 10 - Creating a Toolbar
+"""
+from tkinter import *
+
+def doNothing():
+    print('I dont work yet....')
+
+root = Tk()
+
+# ********* Main Menu *********
+
+menu = Menu(root)
+root.config(menu=menu)
+
+subMenu = Menu(menu)
+menu.add_cascade(label='File', menu=subMenu)
+subMenu.add_command(label='New Project....', command=doNothing)
+subMenu.add_command(label='New', command=doNothing)
+subMenu.add_command(label='New Scratch File', command=doNothing)
+subMenu.add_command(label='Open.....', command=doNothing)
+subMenu.add_separator()
+subMenu.add_command(label='Settings', command=doNothing)
+subMenu.add_command(label='File Properties', command=doNothing)
+subMenu.add_separator()
+subMenu.add_command(label='Exit', command=doNothing)
+
+
+editMenu = Menu(menu)
+menu.add_cascade(label='Edit', menu=editMenu)
+editMenu.add_command(label='Undo', command=doNothing)
+editMenu.add_command(label='Redo', command=doNothing)
+editMenu.add_separator()
+editMenu.add_command(label='Cut', command=doNothing)
+editMenu.add_command(label='Copy', command=doNothing)
+
+# ********* The Toolbar *********
+
+toolbar = Frame(root, bg='magenta')
+
+insertStuff = Button(toolbar, text='Insert Image', command=doNothing)
+insertStuff.pack(side=LEFT, padx= 2, pady=2)
+printStuff = Button(toolbar, text='Print', command=doNothing)
+insertStuff.pack(side=LEFT, padx= 2, pady=2)
+
+toolbar.pack(side=TOP,fill=X) #x/y need to be in CAPS
+
+
+root.mainloop()
+"""
 
 
 
